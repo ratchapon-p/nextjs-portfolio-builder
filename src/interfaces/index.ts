@@ -35,3 +35,13 @@ export interface IExperience {
     created_at: string,
     updated_at: string,
 }
+
+export interface ISkill {
+    id: string,
+    user_id: string,
+    name: string,
+    level: string,
+    image: string,
+    created_at: string,
+    updated_at: string,
+}
