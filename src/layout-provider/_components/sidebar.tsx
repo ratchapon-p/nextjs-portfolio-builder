@@ -7,7 +7,7 @@ import {
     SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet";
-import { Book, Home, LaptopMinimalCheck, ListCheck, Presentation, User } from 'lucide-react';
+import { Book, Home, LaptopMinimalCheck, ListCheck, Mail, Presentation, Settings, User } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import SignOutButton from '@/components/functional/sing-out-button';
@@ -48,6 +48,16 @@ function PrivateLayoutSideBar({onClose, openSideBar} : {onClose: () => void, ope
             path: '/account/experiences',
             icon: <ListCheck size={14} />
         },
+        {
+            title: 'Configurations',
+            path: '/account/configurations',
+            icon: <Settings size={14} />
+        },
+        {
+            title: 'Queries',
+            path: '/account/queries',
+            icon: <Mail size={14} />
+        },
     
     ]
 
@@ -60,7 +70,7 @@ function PrivateLayoutSideBar({onClose, openSideBar} : {onClose: () => void, ope
                 <SheetHeader>
                   {/* <SheetTitle>Edit Profile</SheetTitle> */}
                 </SheetHeader>
-                <div className="flex flex-col gap-7 mt-10  m-5 cursor-pointer">
+                <div className="flex flex-col gap-5 mt-10  m-5 cursor-pointer">
                     {
                     menuItems.map((item) => (
                         <div 

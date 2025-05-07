@@ -57,7 +57,6 @@ function SkillForm({formType, initialValues, openSkillForm, setOpenSkillForm, re
       image: initialValues?.image || "",
     },
   })
-console.log(initialValues,'<<initialValues');
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
