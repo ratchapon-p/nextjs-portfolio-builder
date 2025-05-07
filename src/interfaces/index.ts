@@ -45,3 +45,16 @@ export interface ISkill {
     created_at: string,
     updated_at: string,
 }
+
+export interface IEducation {
+    id: string,
+    user_id: string,
+    degree: string,
+    instituation: string,
+    location: string,
+    percentage: string,
+    start_date: string,
+    end_date: string,
+    created_at: string,
+    updated_at: string,
+}

@@ -1,5 +1,5 @@
 'use client'
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -15,10 +15,8 @@ import {
 import { Input } from "@/components/ui/input"
 import userGlobalStore, { IuserGlobalStore } from "@/global-store/users-store";
 import toast from "react-hot-toast";
-import { uploadFileAndGetUrl } from "@/helpers/uploads";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
-import { addNewProject, editProjectById } from "@/actions/projects";
 import { addNewExperience, editExperienceById } from "@/actions/experiences";
 
 interface ExperienceFormProps {

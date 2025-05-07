@@ -1,11 +1,7 @@
 "use client"
-import { getCurrentUser } from '@/actions/user'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { deleteSkillById, getSkillByUserId } from '@/actions/skills'
-import SkillsTable from './_components/skill-table'
-import { set } from 'react-hook-form'
 import SkillForm from './_components/skill-form'
 import toast from 'react-hot-toast'
 import userGlobalStore, { IuserGlobalStore } from '@/global-store/users-store'
@@ -21,7 +17,6 @@ import {
 } from "@/components/ui/table";
 import { Pencil, Trash2 } from "lucide-react";
 import { ISkill } from '@/interfaces'
-import dayjs from 'dayjs'
 
 function SkillsPage() {
 
@@ -53,10 +48,11 @@ function SkillsPage() {
 
   const columns = ["", "Name", "Level", "Actions"];
 
-  const deleteSkillHandler = (id : string) =>{
+  const deleteSkillHandler = async(id : string) =>{
     try {
       setLoading(true)
-      const response : any = deleteSkillById(id)
+      const response : any = await deleteSkillById(id)
+      
       if(!response.success){
         throw new Error(response.message)
       }
