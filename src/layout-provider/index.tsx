@@ -3,6 +3,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import PrivateLayout from "./private-layout";
 import PublicLayout from "./public-layout";
+import PortfolioLayout from "@/app/portfolio/_components/portfolio-layout";
 
 function LayoutProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -10,7 +11,10 @@ function LayoutProvider({ children }: { children: React.ReactNode }) {
   if (pathname.startsWith("/account")) {
     return <PrivateLayout>{children}</PrivateLayout>;
   }
-  return <PublicLayout>{children}</PublicLayout>;
+
+  if (pathname.startsWith("/portfolio")) {
+    return <PortfolioLayout>{children}</PortfolioLayout>;
+  }
 }
 
 export default LayoutProvider;

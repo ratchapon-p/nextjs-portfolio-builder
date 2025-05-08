@@ -134,7 +134,7 @@ function ProjectForm({formType='add', initialValues={}} : IProjectFromProps) {
                 )}
             />
 
-            <div className="grid grid-col-s2 gap-5">
+            <div className="grid grid-cols-2 gap-5">
     
                 <FormField
                     control={form.control}
